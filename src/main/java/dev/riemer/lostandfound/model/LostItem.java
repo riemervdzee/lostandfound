@@ -22,7 +22,7 @@ import java.util.List;
 @Table(name = "lost_items")
 public class LostItem {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)

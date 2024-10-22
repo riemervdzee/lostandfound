@@ -87,8 +87,30 @@ For verifying (also used in Github Actions/CI)
 
 ` ./mvnw verify`
 
-## Database
-
-
-
 ## API Endpoints
+
+### POST `/auth/login`
+
+This service uses JWT for authentication so we need to obtain a token first.
+
+The test dataset comes with an `admin` and 2 users (called `user1` and `user2`). 
+The password is the same as the username. See below for an example
+
+![Alt text](documentation/auth_login.png "Auth token")
+
+This token should then be used in the `Authorization` header, prefixed with `Bearer ${token}`.
+See next endpoint for an example
+
+### GET `/lost-items`
+
+Returns all current LostItems in the database, which can be claimed by all users
+
+![Alt text](documentation/lost_items.png "Lost items")
+
+
+### PUT `/lost-items/claim`
+
+Allows the user to create a claim of a LostItem. The `lostItemId` and `quantity` should be entered in the body of the request
+
+![Alt text](documentation/claim.png "Claim")
+

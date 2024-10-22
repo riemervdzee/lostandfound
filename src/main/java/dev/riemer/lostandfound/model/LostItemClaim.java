@@ -19,10 +19,10 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "lost_item_claims", uniqueConstraints = {@UniqueConstraint(columnNames = {"user_id", "lost_item_id"})})
+@Table(name = "lost_item_claims")
 public class LostItemClaim {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
